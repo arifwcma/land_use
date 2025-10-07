@@ -41,10 +41,7 @@ def report_plots(area, file_name, report_type, class_counts, total):
         print(f"No data to plot for {area} ({report_type})")
         return
 
-    items = sorted(
-        class_counts.items(),
-        key=lambda x: (x[0].strip().lower().startswith("other"), x[0].strip().lower())
-    )
+    items = sorted(class_counts.items(), key=lambda x: x[1], reverse=True)
     labels = [label for label, _ in items]
     percents = [(c / total) * 100 for _, c in items]
 
