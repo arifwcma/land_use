@@ -1,0 +1,404 @@
+{
+  "type" : "CIMLayerDocument",
+  "version" : "3.0.0",
+  "build" : 36057,
+  "layers" : [
+    "CIMPATH=map/clum_50m_2023_v2_tif2.json"
+  ],
+  "layerDefinitions" : [
+    {
+      "type" : "CIMRasterLayer",
+      "name" : "clum_50m_2023_v2.tif - AGIND",
+      "uRI" : "CIMPATH=map/clum_50m_2023_v2_tif2.json",
+      "sourceModifiedTime" : {
+        "type" : "TimeInstant"
+      },
+      "metadataURI" : "CIMPATH=Metadata/7c610837a3e0c3eea52a58a406e3be44.xml",
+      "useSourceMetadata" : true,
+      "description" : "clum_50m_2023_v2.tif",
+      "layerElevation" : {
+        "type" : "CIMLayerElevationSurface",
+        "elevationSurfaceLayerURI" : "CIMPATH=Map/7720ab63fab44ba48a190f9be8610b69.json"
+      },
+      "layerType" : "Operational",
+      "showLegends" : true,
+      "visibility" : true,
+      "displayCacheType" : "Permanent",
+      "maxDisplayCacheAge" : 5,
+      "showPopups" : true,
+      "serviceLayerID" : -1,
+      "refreshRate" : -1,
+      "refreshRateUnit" : "esriTimeUnitsSeconds",
+      "blendingMode" : "Alpha",
+      "allowDrapingOnIntegratedMesh" : true,
+      "dataConnection" : {
+        "type" : "CIMStandardDataConnection",
+        "workspaceConnectionString" : "DATABASE=.",
+        "workspaceFactory" : "Raster",
+        "dataset" : "clum_50m_2023_v2.tif",
+        "datasetType" : "esriDTAny"
+      },
+      "colorizer" : {
+        "type" : "CIMRasterUniqueValueColorizer",
+        "resamplingType" : "NearestNeighbor",
+        "contrast" : 10,
+        "noDataColor" : {
+          "type" : "CIMRGBColor",
+          "values" : [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "defaultColor" : {
+          "type" : "CIMRGBColor",
+          "values" : [
+            225,
+            25,
+            86,
+            100
+          ]
+        },
+        "fieldName" : "VALUE",
+        "groups" : [
+          {
+            "type" : "CIMRasterUniqueValueGroup",
+            "classes" : [
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "110",
+                  "111",
+                  "112",
+                  "113",
+                  "114",
+                  "115",
+                  "116",
+                  "117",
+                  "120",
+                  "121",
+                  "122",
+                  "123",
+                  "124",
+                  "125",
+                  "130",
+                  "131",
+                  "132",
+                  "133",
+                  "134",
+                  "220",
+                  "221",
+                  "222",
+                  "310",
+                  "311",
+                  "312",
+                  "313",
+                  "314",
+                  "410",
+                  "411",
+                  "412",
+                  "413",
+                  "414",
+                  "500",
+                  "530",
+                  "531",
+                  "532",
+                  "533",
+                  "534",
+                  "535",
+                  "536",
+                  "537",
+                  "538",
+                  "540",
+                  "541",
+                  "542",
+                  "543",
+                  "544",
+                  "545",
+                  "550",
+                  "551",
+                  "552",
+                  "553",
+                  "554",
+                  "555",
+                  "560",
+                  "561",
+                  "562",
+                  "563",
+                  "564",
+                  "565",
+                  "566",
+                  "567",
+                  "570",
+                  "571",
+                  "572",
+                  "573",
+                  "574",
+                  "575",
+                  "580",
+                  "581",
+                  "582",
+                  "583",
+                  "584",
+                  "590",
+                  "591",
+                  "592",
+                  "593",
+                  "594",
+                  "595",
+                  "600",
+                  "610",
+                  "611",
+                  "612",
+                  "613",
+                  "614",
+                  "620",
+                  "621",
+                  "622",
+                  "623",
+                  "630",
+                  "631",
+                  "632",
+                  "633",
+                  "640",
+                  "641",
+                  "642",
+                  "643",
+                  "650",
+                  "651",
+                  "652",
+                  "653",
+                  "654",
+                  "660",
+                  "661",
+                  "662",
+                  "663"
+                ],
+                "label" : "Other uses",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    255,
+                    255,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "210"
+                ],
+                "label" : "Grazing native vegetation",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    217,
+                    214,
+                    207,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "320",
+                  "321",
+                  "322",
+                  "323",
+                  "324",
+                  "325",
+                  "360",
+                  "361",
+                  "362",
+                  "363",
+                  "364",
+                  "365",
+                  "400",
+                  "420",
+                  "421",
+                  "422",
+                  "423",
+                  "424",
+                  "460",
+                  "461",
+                  "462",
+                  "463",
+                  "464",
+                  "465"
+                ],
+                "label" : "Grazing modified pastures",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    205,
+                    213,
+                    70,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "330",
+                  "331",
+                  "332",
+                  "333",
+                  "334",
+                  "335",
+                  "336",
+                  "338",
+                  "430",
+                  "431",
+                  "432",
+                  "433",
+                  "434",
+                  "435",
+                  "436",
+                  "437",
+                  "438",
+                  "439"
+                ],
+                "label" : "Cropping",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    114,
+                    136,
+                    26,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "340",
+                  "341",
+                  "342",
+                  "343",
+                  "344",
+                  "345",
+                  "346",
+                  "347",
+                  "348",
+                  "349",
+                  "350",
+                  "352",
+                  "353",
+                  "440",
+                  "441",
+                  "442",
+                  "443",
+                  "444",
+                  "445",
+                  "446",
+                  "447",
+                  "448",
+                  "449",
+                  "450",
+                  "451",
+                  "452",
+                  "453",
+                  "454"
+                ],
+                "label" : "Horticulture",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    230,
+                    0,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "510",
+                  "511",
+                  "512",
+                  "513",
+                  "514",
+                  "515",
+                  "520",
+                  "521",
+                  "522",
+                  "523",
+                  "524",
+                  "525",
+                  "526",
+                  "527",
+                  "528"
+                ],
+                "label" : "Intensive plant and animal industries",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    115,
+                    223,
+                    255,
+                    100
+                  ]
+                }
+              }
+            ],
+            "heading" : "VALUE"
+          }
+        ]
+      },
+      "attributeTable" : {
+        "type" : "CIMRasterTable",
+        "displayField" : "Value",
+        "editable" : true
+      }
+    }
+  ],
+  "binaryReferences" : [
+    {
+      "type" : "CIMBinaryReference",
+      "uRI" : "CIMPATH=Metadata/7c610837a3e0c3eea52a58a406e3be44.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20240612</CreaDate><CreaTime>15144600</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>clum_50m_2023_v2.tif</resTitle></idCitation><idAbs>clum_50m_2023_v2.tif</idAbs><idCredit></idCredit><idPurp></idPurp><resConst><Consts><useLimit></useLimit></Consts></resConst></dataIdInfo></metadata>\r\n"
+    }
+  ],
+  "rGBColorProfile" : "sRGB IEC61966-2.1",
+  "cMYKColorProfile" : "U.S. Web Coated (SWOP) v2",
+  "elevationSurfaceLayerDefinitions" : [
+    {
+      "type" : "CIMElevationSurfaceLayer",
+      "name" : "Ground",
+      "uRI" : "CIMPATH=Map/7720ab63fab44ba48a190f9be8610b69.json",
+      "useSourceMetadata" : true,
+      "description" : "Ground",
+      "expanded" : true,
+      "layerType" : "Operational",
+      "showLegends" : false,
+      "visibility" : true,
+      "displayCacheType" : "Permanent",
+      "maxDisplayCacheAge" : 5,
+      "showPopups" : true,
+      "serviceLayerID" : -1,
+      "refreshRate" : -1,
+      "refreshRateUnit" : "esriTimeUnitsSeconds",
+      "blendingMode" : "Alpha",
+      "allowDrapingOnIntegratedMesh" : true,
+      "elevationMode" : "BaseGlobeSurface",
+      "verticalExaggeration" : 1,
+      "color" : {
+        "type" : "CIMRGBColor",
+        "values" : [
+          255,
+          255,
+          255,
+          100
+        ]
+      },
+      "surfaceTINShadingMode" : "Smooth"
+    }
+  ]
+}

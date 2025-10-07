@@ -6,7 +6,9 @@ import os
 import matplotlib.cm as cm
 
 
-def report(map, layer_name, style_path):
+def report(map, area, report_type):
+    layer_name = f"{area} ({report_type})"
+    style_path = f"lyrxs/{report_type}.lyrx"
     lyr = map.listLayers(layer_name)[0]
     raster = arcpy.Raster(lyr.dataSource)
     arr = arcpy.RasterToNumPyArray(raster)
@@ -25,13 +27,14 @@ def report(map, layer_name, style_path):
             label = mapping[v]
             class_counts[label] = class_counts.get(label, 0) + c
             total += c
-    report_plots(class_counts, total)
+    layer_name = area.replace(" ", "_")
+    report_plots(layer_name, report_type, class_counts, total)
 
 def report_text(class_counts, total):
     for label, c in sorted(class_counts.items(), key=lambda x: -x[1]):
         print(f"{label}: {(c / total) * 100:.2f}%")
 
-def report_plots(class_counts, total):
+def report_plots(layer_name, report_type, class_counts, total):
     items = sorted(
         class_counts.items(),
         key=lambda x: (x[0].strip().lower().startswith("other"), x[0].strip().lower())
@@ -57,11 +60,11 @@ def report_plots(class_counts, total):
     for spine in ax.spines.values():
         spine.set_visible(False)
 
-    plt.title("Land Use", fontsize=11, weight="bold")
+    plt.title(f"{layer_name} ({report_type})", fontsize=11, weight="bold")
     plt.tight_layout()
 
-    out_dir = r"C:\Users\m.rahman\PythonProject\land_use\plots\ag"
+    out_dir = r"plots\ag"
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, "land_use_report.png")
+    out_path = os.path.join(out_dir, f"{layer_name}.png")
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
