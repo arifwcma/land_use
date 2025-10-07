@@ -1,9 +1,6 @@
 import arcpy
 from get_class_maps import parse_lyrx_classes
 import numpy as np
-import matplotlib.pyplot as plt
-import os
-import matplotlib.cm as cm
 
 
 def report(map, area, report_type):
@@ -35,6 +32,15 @@ def report_text(class_counts, total):
         print(f"{label}: {(c / total) * 100:.2f}%")
 
 def report_plots(area, file_name, report_type, class_counts, total):
+    import os
+    import matplotlib.pyplot as plt
+    import matplotlib.cm as cm
+    import numpy as np
+
+    if not class_counts:
+        print(f"No data to plot for {area} ({report_type})")
+        return
+
     items = sorted(
         class_counts.items(),
         key=lambda x: (x[0].strip().lower().startswith("other"), x[0].strip().lower())
@@ -46,24 +52,25 @@ def report_plots(area, file_name, report_type, class_counts, total):
     colors = cmap(np.linspace(0, 1, len(labels)))
 
     fig, ax = plt.subplots()
-    bars = ax.barh(labels, percents, color=colors)
+    bars = ax.barh(range(len(labels)), percents, color=colors)
 
-    for bar, pct in zip(bars, percents):
+    for i, (bar, pct) in enumerate(zip(bars, percents)):
         ax.text(pct + 0.5, bar.get_y() + bar.get_height() / 2,
                 f"{pct:,.2f}%", va="center", ha="left", fontsize=9)
+        ax.text(-1, bar.get_y() + bar.get_height() / 2,
+                labels[i], va="center", ha="right", fontsize=9)
 
     ax.invert_yaxis()
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_xlabel("")
-    ax.set_ylabel("")
+    ax.set_xlim(0, max(percents) + 5)
     for spine in ax.spines.values():
         spine.set_visible(False)
 
     plt.title(f"{area} ({report_type})", fontsize=11, weight="bold")
     plt.tight_layout()
 
-    out_dir = r"plots\ag"
+    out_dir = fr"plots\{report_type}"
     os.makedirs(out_dir, exist_ok=True)
     out_path = os.path.join(out_dir, f"{file_name}.png")
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
