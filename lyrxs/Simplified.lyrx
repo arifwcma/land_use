@@ -75,11 +75,11 @@
                 ],
                 "label" : "Nature conservation",
                 "color" : {
-                  "type" : "CIMHSVColor",
+                  "type" : "CIMRGBColor",
                   "values" : [
-                    268,
-                    50,
-                    80,
+                    153,
+                    99,
+                    213,
                     100
                   ]
                 }

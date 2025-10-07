@@ -1,6 +1,8 @@
 import arcpy
 from get_class_maps import parse_lyrx_classes
 import numpy as np
+import os
+import matplotlib.pyplot as plt
 
 
 def report(map, area, report_type):
@@ -10,7 +12,7 @@ def report(map, area, report_type):
     raster = arcpy.Raster(lyr.dataSource)
     arr = arcpy.RasterToNumPyArray(raster)
 
-    mapping = parse_lyrx_classes(style_path)
+    mapping, color_mapping, unique_classes = parse_lyrx_classes(style_path)
 
     nodata = raster.noDataValue
     vals, counts = np.unique(arr, return_counts=True)
@@ -25,28 +27,22 @@ def report(map, area, report_type):
             class_counts[label] = class_counts.get(label, 0) + c
             total += c
     file_name = area.replace(" ", "_")
-    report_plots(area, file_name, report_type, class_counts, total)
+    report_plots(area, file_name, report_type, class_counts, total, color_mapping, unique_classes)
 
 def report_text(class_counts, total):
     for label, c in sorted(class_counts.items(), key=lambda x: -x[1]):
         print(f"{label}: {(c / total) * 100:.2f}%")
 
-def report_plots(area, file_name, report_type, class_counts, total):
-    import os
-    import matplotlib.pyplot as plt
-    import matplotlib.cm as cm
-    import numpy as np
-
+def report_plots(area, file_name, report_type, class_counts, total, color_mapping, unique_classes):
     if not class_counts:
         print(f"No data to plot for {area} ({report_type})")
         return
 
-    items = sorted(class_counts.items(), key=lambda x: x[1], reverse=True)
-    labels = [label for label, _ in items]
-    percents = [(c / total) * 100 for _, c in items]
-
-    cmap = cm.get_cmap("viridis", len(labels))
-    colors = cmap(np.linspace(0, 1, len(labels)))
+    merged = {cls: class_counts.get(cls, 0) for cls in unique_classes}
+    items = sorted(merged.items(), key=lambda x: x[1], reverse=True)
+    labels = [label for label, _ in items][::-1]
+    percents = [((c / total) * 100)+10 if total > 0 else 0 for _, c in items][::-1]
+    colors = [color_mapping.get(label, (0.5, 0.5, 0.5, 1.0)) for label in labels]
 
     fig, ax = plt.subplots()
     bars = ax.barh(range(len(labels)), percents, color=colors)
@@ -57,10 +53,9 @@ def report_plots(area, file_name, report_type, class_counts, total):
         ax.text(-1, bar.get_y() + bar.get_height() / 2,
                 labels[i], va="center", ha="right", fontsize=9)
 
-    ax.invert_yaxis()
     ax.set_xticks([])
     ax.set_yticks([])
-    ax.set_xlim(0, max(percents) + 5)
+    ax.set_xlim(0, max(percents) + 5 if percents else 1)
     for spine in ax.spines.values():
         spine.set_visible(False)
 
