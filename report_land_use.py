@@ -27,14 +27,14 @@ def report(map, area, report_type):
             label = mapping[v]
             class_counts[label] = class_counts.get(label, 0) + c
             total += c
-    layer_name = area.replace(" ", "_")
-    report_plots(layer_name, report_type, class_counts, total)
+    file_name = area.replace(" ", "_")
+    report_plots(area, file_name, report_type, class_counts, total)
 
 def report_text(class_counts, total):
     for label, c in sorted(class_counts.items(), key=lambda x: -x[1]):
         print(f"{label}: {(c / total) * 100:.2f}%")
 
-def report_plots(layer_name, report_type, class_counts, total):
+def report_plots(area, file_name, report_type, class_counts, total):
     items = sorted(
         class_counts.items(),
         key=lambda x: (x[0].strip().lower().startswith("other"), x[0].strip().lower())
@@ -60,11 +60,11 @@ def report_plots(layer_name, report_type, class_counts, total):
     for spine in ax.spines.values():
         spine.set_visible(False)
 
-    plt.title(f"{layer_name} ({report_type})", fontsize=11, weight="bold")
+    plt.title(f"{area} ({report_type})", fontsize=11, weight="bold")
     plt.tight_layout()
 
     out_dir = r"plots\ag"
     os.makedirs(out_dir, exist_ok=True)
-    out_path = os.path.join(out_dir, f"{layer_name}.png")
+    out_path = os.path.join(out_dir, f"{file_name}.png")
     plt.savefig(out_path, dpi=300, bbox_inches="tight")
     plt.close()
