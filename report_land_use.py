@@ -1,6 +1,9 @@
 import arcpy
 from get_class_maps import parse_lyrx_classes
 import numpy as np
+import matplotlib.pyplot as plt
+import os
+import matplotlib.cm as cm
 
 
 def report(map, layer_name, style_path):
@@ -22,6 +25,43 @@ def report(map, layer_name, style_path):
             label = mapping[v]
             class_counts[label] = class_counts.get(label, 0) + c
             total += c
+    report_plots(class_counts, total)
 
+def report_text(class_counts, total):
     for label, c in sorted(class_counts.items(), key=lambda x: -x[1]):
         print(f"{label}: {(c / total) * 100:.2f}%")
+
+def report_plots(class_counts, total):
+    items = sorted(
+        class_counts.items(),
+        key=lambda x: (x[0].strip().lower().startswith("other"), x[0].strip().lower())
+    )
+    labels = [label for label, _ in items]
+    percents = [(c / total) * 100 for _, c in items]
+
+    cmap = cm.get_cmap("viridis", len(labels))
+    colors = cmap(np.linspace(0, 1, len(labels)))
+
+    fig, ax = plt.subplots()
+    bars = ax.barh(labels, percents, color=colors)
+
+    for bar, pct in zip(bars, percents):
+        ax.text(pct + 0.5, bar.get_y() + bar.get_height() / 2,
+                f"{pct:,.2f}%", va="center", ha="left", fontsize=9)
+
+    ax.invert_yaxis()
+    ax.set_xticks([])
+    ax.set_yticks([])
+    ax.set_xlabel("")
+    ax.set_ylabel("")
+    for spine in ax.spines.values():
+        spine.set_visible(False)
+
+    plt.title("Land Use", fontsize=11, weight="bold")
+    plt.tight_layout()
+
+    out_dir = r"C:\Users\m.rahman\PythonProject\land_use\plots\ag"
+    os.makedirs(out_dir, exist_ok=True)
+    out_path = os.path.join(out_dir, "land_use_report.png")
+    plt.savefig(out_path, dpi=300, bbox_inches="tight")
+    plt.close()
