@@ -20,7 +20,7 @@ def _to_rgba(vals):
         return (0.5, 0.5, 0.5, 1.0)
     r, g, b = vals[:3]
     if (r, g, b) == (255, 255, 255):
-        r, g, b = (220, 220, 220)
+        r, g, b = (240, 240, 240)
     a = vals[3] if len(vals) > 3 else 100
     if a <= 1:
         alpha = a

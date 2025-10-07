@@ -41,7 +41,7 @@ def report_plots(area, file_name, report_type, class_counts, total, color_mappin
     merged = {cls: class_counts.get(cls, 0) for cls in unique_classes}
     items = sorted(merged.items(), key=lambda x: x[1], reverse=True)
     labels = [label for label, _ in items][::-1]
-    percents = [((c / total) * 100)+10 if total > 0 else 0 for _, c in items][::-1]
+    percents = [((c / total) * 100) if total > 0 else 0 for _, c in items][::-1]
     colors = [color_mapping.get(label, (0.5, 0.5, 0.5, 1.0)) for label in labels]
 
     fig, ax = plt.subplots()
