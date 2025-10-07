@@ -15,4 +15,4 @@ def parse_lyrx_classes(lyrx_path):
                     pass
     return mapping
 
-print("Start")
+
