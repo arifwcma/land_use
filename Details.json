@@ -1,0 +1,704 @@
+{
+  "type" : "CIMLayerDocument",
+  "version" : "3.0.0",
+  "build" : 36057,
+  "layers" : [
+    "CIMPATH=layers/land_use__secondary_classification.json"
+  ],
+  "layerDefinitions" : [
+    {
+      "type" : "CIMRasterLayer",
+      "name" : "Land use, secondary classification",
+      "uRI" : "CIMPATH=layers/land_use__secondary_classification.json",
+      "sourceModifiedTime" : {
+        "type" : "TimeInstant"
+      },
+      "metadataURI" : "CIMPATH=Metadata/b7bd247fac5ddf01231dfad8c619c8df.xml",
+      "useSourceMetadata" : false,
+      "expanded" : true,
+      "layerType" : "Operational",
+      "showLegends" : true,
+      "visibility" : true,
+      "displayCacheType" : "Permanent",
+      "maxDisplayCacheAge" : 5,
+      "showPopups" : true,
+      "serviceLayerID" : -1,
+      "refreshRate" : -1,
+      "refreshRateUnit" : "esriTimeUnitsSeconds",
+      "blendingMode" : "Alpha",
+      "allowDrapingOnIntegratedMesh" : true,
+      "dataConnection" : {
+        "type" : "CIMStandardDataConnection",
+        "workspaceConnectionString" : "DATABASE=\\\\agdaff.gov.au\\raptor\\ForestLandSciences_Program_Managed\\projects\\Land_use\\clum_data\\Products\\Deliverables\\clum_december2023\\DataPackage\\Spatial_data_zip\\clum_50m_2023",
+        "workspaceFactory" : "Raster",
+        "dataset" : "clum_50m_2023.tif",
+        "datasetType" : "esriDTRasterDataset"
+      },
+      "colorizer" : {
+        "type" : "CIMRasterUniqueValueColorizer",
+        "resamplingType" : "NearestNeighbor",
+        "contrast" : 10,
+        "noDataColor" : {
+          "type" : "CIMRGBColor",
+          "values" : [
+            255,
+            255,
+            255,
+            0
+          ]
+        },
+        "defaultColor" : {
+          "type" : "CIMRGBColor",
+          "values" : [
+            225,
+            25,
+            86,
+            100
+          ]
+        },
+        "fieldName" : "SECV8",
+        "groups" : [
+          {
+            "type" : "CIMRasterUniqueValueGroup",
+            "classes" : [
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "1.1 Nature conservation"
+                ],
+                "label" : "Nature conservation",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    150,
+                    102,
+                    204,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "1.2 Managed resource protection"
+                ],
+                "label" : "Managed resource protection",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    201,
+                    190,
+                    255,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "1.3 Other minimal use"
+                ],
+                "label" : "Other minimal use",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    222,
+                    135,
+                    221,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "2.1 Grazing native vegetation"
+                ],
+                "label" : "Grazing native vegetation",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    255,
+                    229,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "2.2 Production native forests"
+                ],
+                "label" : "Production native forests",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    41,
+                    137,
+                    68,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "3.1 Plantation forests"
+                ],
+                "label" : "Plantation forests",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    173,
+                    255,
+                    181,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "3.2 Grazing modified pastures"
+                ],
+                "label" : "Grazing modified pastures",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    211,
+                    127,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "3.3 Cropping"
+                ],
+                "label" : "Cropping",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    255,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "3.4 Perennial horticulture"
+                ],
+                "label" : "Perennial horticulture",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    171,
+                    135,
+                    120,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "3.5 Seasonal horticulture"
+                ],
+                "label" : "Seasonal horticulture",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    87,
+                    58,
+                    64,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "4.1 Irrigated plantation forests"
+                ],
+                "label" : "Irrigated plantation forests",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    236,
+                    255,
+                    224,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "4.2 Grazing irrigated modified pastures"
+                ],
+                "label" : "Grazing irrigated modified pastures",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    170,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "4.3 Irrigated cropping"
+                ],
+                "label" : "Irrigated cropping",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    201,
+                    184,
+                    84,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "4.4 Irrigated perennial horticulture"
+                ],
+                "label" : "Irrigated perennial horticulture",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    156,
+                    84,
+                    46,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "4.5 Irrigated seasonal horticulture"
+                ],
+                "label" : "Irrigated seasonal horticulture",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    79,
+                    43,
+                    23,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.1 Intensive horticulture"
+                ],
+                "label" : "Intensive horticulture",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    201,
+                    190,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.2 Intensive animal production"
+                ],
+                "label" : "Intensive animal production",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    135,
+                    190,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.3 Manufacturing and industrial"
+                ],
+                "label" : "Manufacturing and industrial",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    115,
+                    76,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.4.0; 5.4.1 Urban residential"
+                ],
+                "label" : "Urban residential",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    0,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.4.2; 5.4.3; 5.4.4; 5.4.5 Rural residential and farm infrastructure"
+                ],
+                "label" : "Rural residential and farm infrastructure",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    156,
+                    156,
+                    156,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.5 Services"
+                ],
+                "label" : "Services",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    155,
+                    0,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.6 Utilities"
+                ],
+                "label" : "Utilities",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    255,
+                    127,
+                    127,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.7 Transport and communication"
+                ],
+                "label" : "Transport and communication",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    168,
+                    0,
+                    0,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.8 Mining"
+                ],
+                "label" : "Mining",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    71,
+                    130,
+                    143,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "5.9 Waste treatment and disposal"
+                ],
+                "label" : "Waste treatment and disposal",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    41,
+                    73,
+                    82,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "6.1 Lake"
+                ],
+                "label" : "Lake",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    0,
+                    0,
+                    255,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "6.2 Reservoir/dam"
+                ],
+                "label" : "Reservoir/dam",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    0,
+                    197,
+                    255,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "6.3 River"
+                ],
+                "label" : "River",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    0,
+                    112,
+                    255,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "6.4 Channel/aqueduct"
+                ],
+                "label" : "Channel/aqueduct",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    0,
+                    77,
+                    168,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "6.5 Marsh/wetland"
+                ],
+                "label" : "Marsh/wetland",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    115,
+                    178,
+                    255,
+                    100
+                  ]
+                }
+              },
+              {
+                "type" : "CIMRasterUniqueValueClass",
+                "values" : [
+                  "6.6 Estuary/coastal waters"
+                ],
+                "label" : "Estuary/coastal waters",
+                "color" : {
+                  "type" : "CIMRGBColor",
+                  "values" : [
+                    190,
+                    210,
+                    255,
+                    100
+                  ]
+                }
+              }
+            ],
+            "heading" : "SECV8"
+          }
+        ]
+      },
+      "attributeTable" : {
+        "type" : "CIMRasterTable",
+        "displayField" : "Value",
+        "editable" : true,
+        "fieldDescriptions" : [
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "OID",
+            "fieldName" : "OID",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 12,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Value",
+            "fieldName" : "Value",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 12,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 0
+            },
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "Count",
+            "fieldName" : "Count",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 12,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 6
+            },
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "LU_CODEV8",
+            "fieldName" : "LU_CODEV8",
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "LU_V8N",
+            "fieldName" : "LU_V8N",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 12,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 6
+            },
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "TERTV8",
+            "fieldName" : "TERTV8",
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "SECV8",
+            "fieldName" : "SECV8",
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "PRIMV8",
+            "fieldName" : "PRIMV8",
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "CL19N",
+            "fieldName" : "CL19N",
+            "numberFormat" : {
+              "type" : "CIMNumericFormat",
+              "alignmentOption" : "esriAlignRight",
+              "alignmentWidth" : 12,
+              "roundingOption" : "esriRoundNumberOfDecimals",
+              "roundingValue" : 6
+            },
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "CL19",
+            "fieldName" : "CL19",
+            "visible" : true,
+            "searchMode" : "Exact"
+          },
+          {
+            "type" : "CIMFieldDescription",
+            "alias" : "AGIND",
+            "fieldName" : "AGIND",
+            "visible" : true,
+            "searchMode" : "Exact"
+          }
+        ]
+      },
+      "timeDisplayDefinition" : {
+        "type" : "CIMTimeDisplayDefinition",
+        "timeInterval" : 0,
+        "timeIntervalUnits" : "esriTimeUnitsHours",
+        "timeOffsetUnits" : "esriTimeUnitsYears"
+      },
+      "timeDefinition" : {
+        "type" : "CIMTimeDataDefinition"
+      }
+    }
+  ],
+  "binaryReferences" : [
+    {
+      "type" : "CIMBinaryReference",
+      "uRI" : "CIMPATH=Metadata/b7bd247fac5ddf01231dfad8c619c8df.xml",
+      "data" : "<?xml version=\"1.0\"?>\r\n<metadata xml:lang=\"en\"><Esri><CreaDate>20240409</CreaDate><CreaTime>12144500</CreaTime><ArcGISFormat>1.0</ArcGISFormat><SyncOnce>TRUE</SyncOnce></Esri><dataIdInfo><idCitation><resTitle>Land use, secondary classification</resTitle></idCitation><idAbs></idAbs><idCredit></idCredit></dataIdInfo></metadata>\r\n"
+    }
+  ],
+  "rGBColorProfile" : "sRGB IEC61966-2.1",
+  "cMYKColorProfile" : "U.S. Web Coated (SWOP) v2"
+}
