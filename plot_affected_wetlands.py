@@ -22,4 +22,8 @@ plt.ylabel("Affected Wetlands (%)")
 plt.title("Affected Wetlands by Local Area")
 plt.xticks(rotation=45, ha='right')
 plt.tight_layout()
+plt.margins(y=0.1)
+plt.tight_layout()
+plt.savefig("affected_wetlands.png", dpi=600)
 plt.show()
+
